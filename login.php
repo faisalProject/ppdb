@@ -19,7 +19,7 @@
                             <i class="bi bi-eye"></i>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Daftar</button>
+                    <button type="submit" class="btn btn-primary">Masuk</button>
                     <p>Belum mempunyai akun? <a href="register.php">Daftar</a></p>
                 </div>
                 <div class="desc">
