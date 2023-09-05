@@ -22,7 +22,7 @@
   <body>
 
     <!-- navbar -->
-    <nav class="nav-landing-page">
+    <nav class="navbar">
         <div class="container">
             <div class="left">
                 <a href="dashboard.php">Hasil Seleksi</a>

@@ -26,4 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('body').classList.toggle('active');
         image.classList.toggle('none');
     }) : null
+
+    var hamburger_2 = document.querySelector('.hamburger-2');
+    var sidebar_landing_contents = document.querySelector('.sidebar-landing-contents');
+
+    hamburger_2 ? hamburger_2.addEventListener('click', () => {
+        sidebar_landing_contents.classList.toggle('active');
+        document.querySelector('body').classList.toggle('active');
+    }) : null
+
+    var show = document.querySelectorAll('.show');
+    var input_type = document.querySelectorAll('.input-type')
+
+    show ? show.forEach((e, i) => {
+        e.addEventListener('click', () => {
+            e.classList.toggle('active');
+            input_type[i].type === 'password' ? input_type[i].type = 'text' : input_type[i].type = 'password'
+        })
+    }) : null;
 })
