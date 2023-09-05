@@ -25,13 +25,13 @@
     <nav class="nav-landing-page">
         <div class="container">
             <div class="left">
-                <a href="#">Hasil Seleksi</a>
-                <a href="#">Administrasi</a>
+                <a href="dashboard.php">Hasil Seleksi</a>
+                <a href="administration.php">Administrasi</a>
             </div>
             <div class="right">
                 <div class="profile">
                     <div class="image">
-                        <img src="image/f2.png" alt="">
+                        <img src="images/f2.png" alt="">
                         <i class="bi bi-chevron-down"></i>
                     </div>
                     <div class="dropdown-container">
