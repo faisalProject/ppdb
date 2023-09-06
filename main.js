@@ -20,19 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var hamburger_menu = document.querySelector('.hamburger-menu');
     var sidebar_contents = document.querySelector('.sidebar-contents');
+    var navbar = document.querySelector('.navbar');
 
     hamburger_menu ? hamburger_menu.addEventListener('click', () => {
         sidebar_contents.classList.toggle('active');
         document.querySelector('body').classList.toggle('active');
         image.classList.toggle('none');
+        navbar.classList.toggle('active');
     }) : null
 
     var hamburger_2 = document.querySelector('.hamburger-2');
     var sidebar_landing_contents = document.querySelector('.sidebar-landing-contents');
+    var navbar_landing_page = document.querySelector('.navbar-landing-page');
 
     hamburger_2 ? hamburger_2.addEventListener('click', () => {
         sidebar_landing_contents.classList.toggle('active');
         document.querySelector('body').classList.toggle('active');
+        navbar_landing_page.classList.toggle('active');
     }) : null
 
     var show = document.querySelectorAll('.show');
@@ -44,4 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
             input_type[i].type === 'password' ? input_type[i].type = 'text' : input_type[i].type = 'password'
         })
     }) : null;
+
+    var hamburger_admin = document.querySelector('.hamburger-admin');
+    var sidebar_admin_contents = document.querySelector('.sidebar-admin-contents');
+    var navbar_admin = document.querySelector('.navbar-admin');
+    hamburger_admin ? hamburger_admin.addEventListener('click', () => {
+        sidebar_admin_contents.classList.toggle('active');
+        document.querySelector('body').classList.toggle('active');
+        navbar_admin.classList.toggle('active');
+    }) : null
 })
