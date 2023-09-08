@@ -14,6 +14,17 @@
             $this->database = $database;
         }
 
+        public function show($conn, $query) {
+            $result = mysqli_query($conn ,$query);
+            $data = [];
+
+            while ($d = mysqli_fetch_assoc($result)) {
+                $data[] = $d;
+            }
+
+            return $data;
+        } 
+
         public function connect() {
             return mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
         }
@@ -133,6 +144,16 @@
                 ";
             }
             
+        }
+
+        public function administration($data, $conn) {
+            $major_name = $data['major_name'];
+            $gender = $data['gender'];
+            $place_of_birth = $data['place_of_birth'];
+            $date_of_birth = $data['date_of_birth'];
+            $address = $data['address'];
+
+
         }
 
     }
