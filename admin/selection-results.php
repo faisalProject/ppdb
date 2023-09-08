@@ -35,7 +35,7 @@
                             <td>25 Desember 2005</td>
                             <td>L</td>
                             <td><p class="pending">Pending</p></td>
-                            <td><a href="#" class="btn btn-secondary">Varifikasi</a></td>
+                            <td><a href="verification.php" class="btn btn-secondary">Varifikasi</a></td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
@@ -44,7 +44,7 @@
                             <td>25 Januari 2004</td>
                             <td>L</td>
                             <td><p class="pending">Pending</p></td>
-                            <td><a href="#" class="btn btn-secondary">Varifikasi</a></td>
+                            <td><a href="verification.php" class="btn btn-secondary">Varifikasi</a></td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
@@ -53,7 +53,7 @@
                             <td>25 Januari 2005</td>
                             <td>L</td>
                             <td><p class="pending">Pending</p></td>
-                            <td><a href="#" class="btn btn-secondary">Varifikasi</a></td>
+                            <td><a href="verification.php" class="btn btn-secondary">Varifikasi</a></td>
                         </tr>
                     </tbody>
                 </table>

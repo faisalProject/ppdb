@@ -193,10 +193,12 @@ body.active {
 .login-contents,
 .dashboard-admin-contents,
 .selection-results-contents,
-.list-major-contents {    
+.list-major-contents,
+.add-major-contents,
+.update-major-contents {    
     margin-top: 70px;
     /* border: 1px solid red; */
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .dashboard-contents > .container,
@@ -204,7 +206,9 @@ body.active {
 .administration-advanced-contents > .container,
 .landing-page-contents > .container,
 .selection-results-contents > .container,
-.list-major-contents > .container {
+.list-major-contents > .container,
+.add-major-contents > .container,
+.update-major-contents > .container {
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
@@ -220,7 +224,9 @@ body.active {
 
 .dashboard-contents > .container > form > input,
 .landing-page-contents > .container > form > input,
-.selection-results-contents > .container > form > input {
+.selection-results-contents > .container > form > input,
+.add-major-contents > .container > form > input,
+.update-major-contents > .container > form > input {
     height: 35px;
     border-radius: 4px 0 0 4px;
     border: 1px solid #ced4da;
@@ -231,7 +237,8 @@ body.active {
 .dashboard-contents > .container > form > input::placeholder,
 .landing-page-contents > .container > form > input::placeholder,
 .register-contents > .container > form > .bottom > input::placeholder,
-.selection-results-contents > .container > form > input::placeholder {
+.selection-results-contents > .container > form > input::placeholder,
+.add-major-contents > .container > form > input::placeholder {
     color: #3d3d3d;
     letter-spacing: 1px;
 }
@@ -732,6 +739,38 @@ body.active {
     border-radius: 4px !important;
 }
 
+.add-major-contents > .container > p {
+    color: #3d3d3d;
+    margin-bottom: 0 !important;
+    letter-spacing: 1px;
+}
+
+.add-major-contents > .container > form,
+.update-major-contents > .container > form {
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 4px;
+}
+
+.add-major-contents > .container > form > input,
+.update-major-contents > .container > form > input {
+    border-radius: 4px !important;
+    border: .1px solid #ced4da;
+}
+
+.add-major-contents > .container > form > .btn-primary,
+.update-major-contents > .container > form > .btn-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border-radius: 4px !important;
+    letter-spacing: 1px ;
+}
+
+
 /* responsive */
 /* for tablet size */
 @media screen and (max-width: 768px) {
@@ -744,7 +783,9 @@ body.active {
 @media screen and (max-width: 380px) {
     .administration-contents > .container > form,
     .administration-advanced-contents > .container > form,
-    .register-contents > .container > form {
+    .register-contents > .container > form,
+    .add-major-contents > .container > form,
+    .update-major-contents > .container > form {
         width: 100%;
     }
 }

@@ -57,4 +57,28 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('body').classList.toggle('active');
         navbar_admin.classList.toggle('active');
     }) : null
+
+    var delete_major = document.querySelectorAll('.delete');
+    delete_major ? delete_major.forEach((e) => {
+        e.addEventListener('click', () => {
+            Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Ingin menghapus jurusan ini!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+            })
+        })
+    }) : null
 })

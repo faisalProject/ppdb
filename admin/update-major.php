@@ -5,12 +5,12 @@
 
 ?>
 
-    <div class="add-major-contents">
+    <div class="update-major-contents">
         <div class="container">
-            <p>Tambah Jurusan</p>
+            <p>Ubah Jurusan</p>
             <form action="" method="post">
                 <input type="text" class="form-control" placeholder="Nama Jurusan">
-                <button type="submit" class="btn btn-primary">Tambah Jurusan</button>
+                <button type="submit" class="btn btn-warning">Ubah Jurusan</button>
             </form>
         </div>
     </div>

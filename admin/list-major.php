@@ -24,8 +24,8 @@
                             <td>IPA</td>
                             <td>
                                 <div class="button-container">
-                                    <a href="#" class="btn btn-warning">Ubah</a>
-                                    <a href="#" class="btn btn-danger">Hapus</a>
+                                    <a href="update-major.php" class="btn btn-warning">Ubah</a>
+                                    <a href="#" class="btn btn-danger delete">Hapus</a>
                                 </div>
                             </td>
                         </tr>
@@ -34,8 +34,8 @@
                             <td>IPS</td>
                             <td>
                                 <div class="button-container">
-                                    <a href="#" class="btn btn-warning">Ubah</a>
-                                    <a href="#" class="btn btn-danger">Hapus</a>
+                                    <a href="update-major.php" class="btn btn-warning">Ubah</a>
+                                    <a href="#" class="btn btn-danger delete">Hapus</a>
                                 </div>
                             </td>
                         </tr>
@@ -44,8 +44,8 @@
                             <td>Bahasa</td>
                             <td>
                                 <div class="button-container">
-                                    <a href="#" class="btn btn-warning">Ubah</a>
-                                    <a href="#" class="btn btn-danger">Hapus</a>
+                                    <a href="update-major.php" class="btn btn-warning">Ubah</a>
+                                    <a href="#" class="btn btn-danger delete">Hapus</a>
                                 </div>
                             </td>
                         </tr>

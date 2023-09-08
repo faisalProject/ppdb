@@ -28,7 +28,7 @@
                     <a href="index.php">Hasil Seleksi</a>
                 </div>
                 <div class="right">
-                    <a href="#" class="btn btn-danger">Daftar</a>
+                    <a href="register.php" class="btn btn-danger">Daftar</a>
                     <div class="hamburger-2">
                         <span></span>
                         <span></span>
