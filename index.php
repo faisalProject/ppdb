@@ -1,5 +1,18 @@
 <?php
 
+    session_start();
+
+    require 'libraries/conn.php';
+
+    if ( isset($_SESSION['login']) ) {
+        if ( $_SESSION['login'] === 'user' ) {
+            header("Location: dashboard.php");
+            exit;
+        } else {
+            header("Location: admin/index.php");
+        }
+    }
+
     // header
     require 'layouts/header-landing-page.php';
 

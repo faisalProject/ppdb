@@ -146,15 +146,33 @@
             
         }
 
-        public function administration($data, $conn) {
-            $major_name = $data['major_name'];
+        public function administration($data, $conn, $user_id) {
+            $major_id = $data['major_id'];
             $gender = $data['gender'];
-            $place_of_birth = $data['place_of_birth'];
+            $place_of_birth = htmlspecialchars($data['place_of_birth']);
             $date_of_birth = $data['date_of_birth'];
-            $address = $data['address'];
+            $address = htmlspecialchars($data['address']);
+            $created_at = date('Y-m-d H:i:s', time());
+            $updated_at = $created_at;
 
+            mysqli_query($conn, "INSERT INTO registration (user_id, major_id, gender, place_of_birth, date_of_birth, address, status, created_at, updated_at) VALUES (
+                '$user_id',
+                '$major_id',
+                '$gender',
+                '$place_of_birth',
+                '$date_of_birth',
+                '$address',
+                'pending',
+                '$created_at',
+                '$updated_at'
+            )");
 
+            return mysqli_affected_rows($conn);
         }
+
+        public function files() {}
+
+        public function administrationAdvanced($data, $conn) {}
 
     }
 

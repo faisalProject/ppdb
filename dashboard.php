@@ -1,4 +1,12 @@
 <?php
+    session_start();
+    require 'libraries/conn.php';
+
+    // cek session
+    if ( $_SESSION['login'] !== 'user' ) {
+        header("Location: login.php");
+        exit;
+    }
 
     // header
     require 'layouts/header-user.php';

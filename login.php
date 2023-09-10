@@ -1,5 +1,7 @@
 <?php
-
+    
+    session_start();
+    
     require 'libraries/conn.php';
 
     $db = new Db("localhost", "root", "", "db_ppdb");

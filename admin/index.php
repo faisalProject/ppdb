@@ -1,5 +1,14 @@
 <?php
 
+    session_start();
+
+    require '../libraries/conn.php';
+
+    if ( $_SESSION['login'] !== 'admin' ) {
+        header("Location: ../login.php");
+        exit;
+    }
+
     // header
     require '../layouts/header-admin.php';
 
