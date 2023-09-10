@@ -170,9 +170,105 @@
             return mysqli_affected_rows($conn);
         }
 
-        public function files() {}
+        public function uploadFiles() {
+            $file_name = $_FILES['file']['name'];
+            $file_size = $_FILES['file']['size'];
+            $error = $_FILES['file']['error'];
+            $tmp_name = $_FILES['file']['tmp_name'];
+            
+            // check whether there are no documents uploaded
+            if ( $error === 4 ) {
+                echo "
+                    <script type='text/javascript'>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Gagal', 
+                                html: '<p class="."p-popup".">Upload berkas terlebih dahulu!</p>',
+                                showConfirmButton: true,
+                            })
+                        })
+                    </script>
+                ";
 
-        public function administrationAdvanced($data, $conn) {}
+                return false;
+            }
+
+            // Check whether what is uploaded is a document
+            $extension = ['pdf'];
+            $document_extension = explode('.', $file_name);
+            $document_extension = strtolower(end($document_extension));
+
+            if ( !in_array($document_extension, $extension) ) {
+                echo "
+                    <script type='text/javascript'>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Gagal', 
+                                html: '<p class="."p-popup".">File yang anda upload bukan dokumen!</p>',
+                                showConfirmButton: true,
+                                showCancelButton: false
+                            })
+                        })
+                    </script>
+                ";
+
+                return false;
+            }
+
+            // Check if the file size is too large
+            if ( $file_size > 2000000 ) {
+                echo "
+                    <script type='text/javascript'>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Gagal', 
+                                html: '<p class="."p-popup".">Ukuran file terlalu besar!</p>',
+                                showConfirmButton: true,
+                                showCancelButton: false
+                            })
+                        })
+                    </script>
+                ";
+
+                return false;
+            }
+
+            $new_file_name = uniqid();
+            $new_file_name .= '.';
+            $new_file_name .= $document_extension;
+
+            move_uploaded_file($tmp_name, 'uploads/' . $new_file_name);
+
+            return $new_file_name;
+        }
+
+        public function administrationAdvanced($data, $conn, $user_id) {
+            $result = mysqli_query($conn, "SELECT * FROM registration WHERE user_id = '$user_id'");
+            $arr = mysqli_fetch_assoc($result);
+            
+            $registration_id = $arr['id'];
+            $file_name = htmlspecialchars($data['file_name']);
+            $file = $this->uploadFiles();
+            $created_at = date('Y-m-d H:i:s', time());
+            $updated_at = $created_at;
+
+            if ( !$file ) {
+                return false;
+            }
+
+            mysqli_query($conn, "INSERT INTO registration_file (registration_id, file_name, file, created_at, updated_at) VALUES(
+                '$registration_id',
+                '$file_name',
+                '$file',
+                '$created_at',
+                '$updated_at'
+            )");
+
+            return mysqli_affected_rows($conn);
+        }
 
     }
 

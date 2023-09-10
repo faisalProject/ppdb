@@ -13,8 +13,10 @@
     $db = new Db("Localhost", "root", "", "db_ppdb");
     $conn = $db->connect();
 
+    $user_id = $_SESSION['id'];
+
     if ( isset($_POST['submit']) ) {
-        if ( $db->administrationAdvanced($_POST, $conn) > 0 ) {
+        if ( $db->administrationAdvanced($_POST, $conn, $user_id) > 0 ) {
             echo "
                 <script type='text/javascript'>
                     document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +30,8 @@
                     })
                 </script>
             ";
+
+            header("Location: administration-advanced.php");
         }
     }
 
@@ -68,9 +72,9 @@
 
             <p>Kelengkapan Administrasi Lanjutan</p>
 
-            <form action="" method="post">
-                <input type="text" class="form-control" placeholder="Nama Berkas" required>
-                <input type="file" class="form-control" required>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="text" class="form-control" name="file_name" placeholder="Nama Berkas" required>
+                <input type="file" class="form-control" name="file" required>
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
