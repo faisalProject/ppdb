@@ -108,6 +108,7 @@
                         
                         // set session
                         $_SESSION['id'] = $arr['id'];
+                        $_SESSION['name'] = $arr['name'];
                         $_SESSION['email'] = $arr['email'];
                         $_SESSION['login'] = $arr['role'];
 
@@ -270,6 +271,16 @@
             return mysqli_affected_rows($conn);
         }
 
+        public function deleteFile($conn, $id) {
+            $result = mysqli_query($conn, "SELECT * FROM registration_file WHERE id = '$id'");
+            $arr = mysqli_fetch_assoc($result);
+
+            unlink('uploads/' . $arr['file']);
+
+            mysqli_query($conn, "DELETE FROM registration_file WHERE id = '$id'");
+
+            return mysqli_affected_rows($conn);
+        }
     }
 
 ?>

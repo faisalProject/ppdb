@@ -34,6 +34,8 @@
                     })
                 </script>
             ";
+
+            header("Location: administration-advanced.php");
         }
     }
 

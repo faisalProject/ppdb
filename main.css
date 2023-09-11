@@ -45,6 +45,11 @@ body.active {
 .navbar-admin > .container > .left {
     display: flex;
     gap: 20px;
+    align-items: center;
+}
+
+.navbar > .container > .right > p {
+    margin-bottom: 0 !important;
 }
 
 .navbar > .container > .left > a,
@@ -162,7 +167,8 @@ body.active {
     gap: 10px;
 }
 
-.navbar-landing-page > .container > .right > a {
+.navbar-landing-page > .container > .right > a,
+.navbar > .container > .right > p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -819,7 +825,8 @@ body.active {
     .navbar > .container > .left > a:nth-child(2),
     .navbar-landing-page > .container > .right > a,
     .navbar-admin > .container > .left > a:not(:first-child),
-    .navbar-admin > .container > .right > a {
+    .navbar-admin > .container > .right > a,
+    .navbar > .container > .right > p {
         display: none;
     }
 

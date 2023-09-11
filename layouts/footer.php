@@ -24,5 +24,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js"></script>
+    <script type="text/javascript">
+      var deleteFile = (id) => {
+        Swal.fire({
+            title: 'Apakah kamu yakin?',
+            html: '<p>Ingin menghapus file ini!</p>',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak',
+        }).then(( result ) => {
+            if ( result.isConfirmed ) {
+                window.location.href = 'delete_file.php?id=' + id;
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    html: '<p>File behasil dihapus!</p>',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+            } else {
+                Swal.fire('Batal', 'Tidak jadi menghapus file', 'info');
+            }
+        })
+    }
+    </script>
   </body>
 </html>

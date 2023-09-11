@@ -29,6 +29,7 @@
                 <a href="administration.php">Administrasi</a>
             </div>
             <div class="right">
+                <p><?= $_SESSION['name'] ?></p>
                 <div class="profile">
                     <div class="image">
                         <img src="images/f2.png" alt="">

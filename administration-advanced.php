@@ -35,6 +35,9 @@
         }
     }
 
+    $result = $db->show($conn, "SELECT * FROM registration_file rf 
+    LEFT JOIN registration r ON rf.registration_id = r.id WHERE user_id = '$user_id'");
+
     // heeader
     require 'layouts/header-user.php';
 
@@ -43,32 +46,32 @@
     <div class="administration-advanced-contents">
         <div class="container">
             <p>Daftar Berkas</p>
-            <div class="table-container">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Berkas</th>
-                        <th scope="col">File Berkas</th>
-                        <th scope="col">Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
+            <?php if ( count($result) > 0 ) : ?>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Ijazah SMA</td>
-                            <td>faspiodf1324.pdf</td>
-                            <td><a href="#" class="btn btn-danger">Hapus</a></td>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Berkas</th>
+                            <th scope="col">File Berkas</th>
+                            <th scope="col">Aksi</th>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Transkip Nilai</td>
-                            <td>faspiodf1324.pdf</td>
-                            <td><a href="#" class="btn btn-danger">Hapus</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <?php $i = 1 ?>
+                            <?php foreach ( $result as $r ) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i ?></th>
+                                    <td><?= $r['file_name'] ?></td>
+                                    <td><a href="<?= 'uploads/' . $r['file'] ?>" target="_blank"><?= $r['file'] ?></a></td>
+                                    <td><a href="#" onclick="deleteFile(<?= $r['id'] ?>)" class="btn btn-danger">Hapus</a></td>
+                                </tr>
+                            <?php $i++ ?>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
 
             <p>Kelengkapan Administrasi Lanjutan</p>
 
