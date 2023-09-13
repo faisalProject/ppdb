@@ -281,6 +281,18 @@
 
             return mysqli_affected_rows($conn);
         }
+
+        public function accept($conn, $id) {
+            mysqli_query($conn, "UPDATE registration SET status = 'accept' WHERE id = '$id'");
+
+            return mysqli_affected_rows($conn);
+        }
+
+        public function reject($conn, $id) {
+            mysqli_query($conn, "UPDATE registration SET status = 'reject' WHERE id = '$id'");
+
+            return mysqli_affected_rows($conn);
+        }
     }
 
 ?>

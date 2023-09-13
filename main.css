@@ -203,7 +203,8 @@ body.active {
 .selection-results-contents,
 .list-major-contents,
 .add-major-contents,
-.update-major-contents {    
+.update-major-contents,
+.verification-contents {    
     margin-top: 70px;
     /* border: 1px solid red; */
     margin-bottom: 70px;
@@ -216,7 +217,8 @@ body.active {
 .selection-results-contents > .container,
 .list-major-contents > .container,
 .add-major-contents > .container,
-.update-major-contents > .container {
+.update-major-contents > .container,
+.verification-contents > .container {
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
@@ -265,7 +267,8 @@ body.active {
 
 .dashboard-contents > .container > p,
 .landing-page-contents > .container > p,
-.list-major-contents > .container > p {
+.list-major-contents > .container > p,
+.verification-contents > .container > p {
     color: #3d3d3d;
     letter-spacing: 1px;
     margin-bottom: 0 !important;
@@ -275,7 +278,8 @@ body.active {
 .administration-advanced-contents > .container > .table-container,
 .landing-page-contents > .container > .table-container,
 .selection-results-contents > .container > .table-container,
-.list-major-contents > .container > .table-container {
+.list-major-contents > .container > .table-container,
+.verification-contents > .container > .table-container {
     display: flex;
     overflow: auto;
     /* border: 1px solid red; */
@@ -291,8 +295,11 @@ body.active {
 .landing-page-contents > .container > .table-container > table > tbody > tr > th:not(:first-child),
 .landing-page-contents > .container > .table-container > table > tbody > tr > td:not(:first-child),
 .list-major-contents > .container > .table-container > table > thead > tr > th:not(:first-child),
-.list-major-contents > .container > .table-container > table > tbody > tr > th:not(:first-child),
-.list-major-contents > .container > .table-container > table > tbody > tr > td:not(:first-child) {
+.list-major-contents > .container > .table-container > table > tbody > tr > th:not(:first-child), 
+.list-major-contents > .container > .table-container > table > tbody > tr > td:not(:first-child),
+.verification-contents > .container > .table-container > table > thead > tr > th:not(:first-child),
+.verification-contents > .container > .table-container > table > tbody > tr > th:not(:first-child),
+.verification-contents > .container > .table-container > table > tbody > tr > td:not(:first-child) {
     min-width: 180px;
 }
 
@@ -316,7 +323,10 @@ body.active {
 .selection-results-contents > .container > .table-container > table > tbody > tr > td,
 .list-major-contents > .container > .table-container > table > thead > tr > th,
 .list-major-contents > .container > .table-container > table > tbody > tr > th,
-.list-major-contents > .container > .table-container > table > tbody > tr > td {
+.list-major-contents > .container > .table-container > table > tbody > tr > td,
+.verification-contents > .container > .table-container > table > thead > tr > th,
+.verification-contents > .container > .table-container > table > tbody > tr > th,
+.verification-contents > .container > .table-container > table > tbody > tr > td {
     color: #3d3d3d;
 }
 
@@ -327,13 +337,16 @@ body.active {
 .landing-page-contents > .container > .table-container > table > thead > tr > th,
 .landing-page-contents > .container > .table-container > table > tbody > tr > th,
 .selection-results-contents > .container > .table-container > table > thead > tr > th,
-.selection-results-contents > .container > .table-container > table > tbody > tr > th {
+.selection-results-contents > .container > .table-container > table > tbody > tr > th,
+.verification-contents > .container > .table-container > table > thead > tr > th,
+.verification-contents > .container > .table-container > table > tbody > tr > th {
     font-weight: 600;
 }
 
 .dashboard-contents > .container > .table-container > table > tbody > tr > td > p,
 .landing-page-contents > .container > .table-container > table > tbody > tr > td > p,
-.selection-results-contents > .container > .table-container > table > tbody > tr > td > p {
+.selection-results-contents > .container > .table-container > table > tbody > tr > td > p,
+.verification-contents > .container > .table-container > table > tbody > tr > td > p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -792,6 +805,20 @@ body.active {
     letter-spacing: 1px ;
 }
 
+.verification-contents > .container  > .action {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.verification-contents > .container  > .action > .btn {
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
 
 /* responsive */
 /* for tablet size */
