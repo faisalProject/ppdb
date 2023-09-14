@@ -49,7 +49,7 @@
                 Swal.fire('Batal', 'Tidak jadi menghapus file', 'info');
             }
         })
-    }
+      }
     </script>
   </body>
 </html>

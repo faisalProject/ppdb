@@ -9,6 +9,11 @@
         exit;
     }
 
+    $db = new Db("Localhost", "root", "", "db_ppdb");
+    $conn = $db->connect();
+
+    $result = $db->show($conn, "SELECT * FROM major");
+
     // header
     require '../layouts/header-admin.php';
 
@@ -28,36 +33,20 @@
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>IPA</td>
-                            <td>
-                                <div class="button-container">
-                                    <a href="update-major.php" class="btn btn-warning">Ubah</a>
-                                    <a href="#" class="btn btn-danger delete">Hapus</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>IPS</td>
-                            <td>
-                                <div class="button-container">
-                                    <a href="update-major.php" class="btn btn-warning">Ubah</a>
-                                    <a href="#" class="btn btn-danger delete">Hapus</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Bahasa</td>
-                            <td>
-                                <div class="button-container">
-                                    <a href="update-major.php" class="btn btn-warning">Ubah</a>
-                                    <a href="#" class="btn btn-danger delete">Hapus</a>
-                                </div>
-                            </td>
-                        </tr>
+                        <?php $i = 1 ?>
+                        <?php foreach ( $result as $r ) : ?>
+                            <tr>
+                                <th scope="row"><?= $i ?></th>
+                                <td><?= $r['major_name'] ?></td>
+                                <td>
+                                    <div class="button-container">
+                                        <a href="update-major.php?id=<?= $r['id'] ?>" class="btn btn-warning">Ubah</a>
+                                        <a href="#" onclick="deleteMajor(<?= $r['id'] ?>)" class="btn btn-danger delete">Hapus</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php $i++ ?>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

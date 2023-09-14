@@ -293,6 +293,35 @@
 
             return mysqli_affected_rows($conn);
         }
+
+        public function addMajor($conn, $data) {
+            $major_name = $data['major_name'];
+            $created_at = date('Y-m-d H:i:s', time());
+            $updated_at = $created_at;
+
+            mysqli_query($conn, "INSERT INTO major (major_name, created_at, updated_at) VALUES (
+                '$major_name',
+                '$created_at',
+                '$updated_at'
+            ) ");
+
+            return mysqli_affected_rows($conn);
+        }
+
+        public function updateMajor($conn, $data, $id) {
+            $major_name = $data['major_name'];
+            $updated_at = date('Y-m-d H:i:s', time());
+
+            mysqli_query($conn, "UPDATE major SET major_name = '$major_name', updated_at = '$updated_at' WHERE id = '$id'");
+
+            return mysqli_affected_rows($conn);
+        }
+
+        public function deleteMajor($conn, $id) { 
+            mysqli_query($conn, "DELETE FROM major WHERE id = '$id'");
+            
+            return mysqli_affected_rows($conn); 
+        }
     }
 
 ?>
