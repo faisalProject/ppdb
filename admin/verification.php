@@ -33,7 +33,7 @@
                 </script>
             ";
 
-            // header("Location: selection-results.php");
+            header("Location: selection-results.php");
         }
     }
 
@@ -52,6 +52,8 @@
                     })
                 </script>
             ";
+
+            header("Location: selection-results.php");
         }
     }
 

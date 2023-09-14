@@ -1,4 +1,4 @@
-<footer>
+    <footer>
       <div class="footer-contents">
         <div class="container">
           <div class="box">
@@ -29,7 +29,7 @@
       var deleteMajor = (id) => {
         Swal.fire({
             title: 'Apakah kamu yakin?',
-            html: '<p>Ingin menghapus jurusan ini!</p>',
+            html: '<p>Ingin menghapus file ini!</p>',
             icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

@@ -28,6 +28,8 @@
                 })
             </script>
         ";
+
+        header("Location: list-major.php");
     }
 
 ?>

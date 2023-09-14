@@ -41,7 +41,7 @@
                                 <td>
                                     <div class="button-container">
                                         <a href="update-major.php?id=<?= $r['id'] ?>" class="btn btn-warning">Ubah</a>
-                                        <a href="#" onclick="deleteMajor(<?= $r['id'] ?>)" class="btn btn-danger delete">Hapus</a>
+                                        <a href="#" onclick="deleteMajor(<?= $r['id'] ?>)" class="btn btn-danger">Hapus</a>
                                     </div>
                                 </td>
                             </tr>
