@@ -29,7 +29,7 @@
                 <a href="list-major.php">Daftar Jurusan</a>
             </div>
             <div class="right">
-                <a href="#" class="btn btn-danger">Keluar</a>
+                <a href="logout.php" class="btn btn-danger">Keluar</a>
                 <div class="hamburger-admin">
                     <span></span>
                     <span></span>

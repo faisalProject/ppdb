@@ -12,7 +12,7 @@
     $db = new Db("Localhost", "root", "", "db_ppdb");
     $conn = $db->connect();
 
-    $result = $db->show($conn, "SELECT * FROM major");
+    $result = $db->show($conn, "SELECT * FROM major ORDER BY id DESC");
 
     // header
     require '../layouts/header-admin.php';

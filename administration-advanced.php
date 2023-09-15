@@ -36,7 +36,7 @@
     }
 
     $result = $db->show($conn, "SELECT rf.id, rf.file_name, rf.file  FROM registration_file rf 
-    LEFT JOIN registration r ON rf.registration_id = r.id WHERE r.user_id = '$user_id'");
+    LEFT JOIN registration r ON rf.registration_id = r.id WHERE r.user_id = '$user_id' ORDER BY rf.id DESC");
 
     // heeader
     require 'layouts/header-user.php';

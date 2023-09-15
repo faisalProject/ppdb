@@ -322,6 +322,26 @@
             
             return mysqli_affected_rows($conn); 
         }
+
+        public function searchingByAdmin($conn, $data) {
+            $keyword = $data['keyword'];
+
+            $result = $this->show($conn, "SELECT r.id, u.name , r.place_of_birth, r.date_of_birth, r.gender, r.status FROM registration r 
+            LEFT JOIN users u ON r.user_id = u.id WHERE 
+            u.name LIKE '%$keyword%' ORDER BY id DESC");
+            
+            return $result;
+        }
+
+        public function searchingByUser($conn, $data) {
+            $keyword = $data['keyword'];
+
+            $result = $this->show($conn, "SELECT r.id, u.name, r.place_of_birth, r.date_of_birth, r.gender, r.status FROM registration r 
+            LEFT JOIN users u ON r.user_id = u.id WHERE 
+            u.name LIKE '%$keyword%' ORDER BY u.id DESC");
+
+            return $result;
+        }
     }
 
 ?>

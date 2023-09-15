@@ -37,7 +37,7 @@
                     </div>
                     <div class="dropdown-container">
                         <a href="#"><i class="bi bi-person"></i>Profil</a>
-                        <a href="#"> <i class="bi bi-box-arrow-left"></i> Keluar</a>
+                        <a href="logout.php"> <i class="bi bi-box-arrow-left"></i> Keluar</a>
                     </div>
                 </div>
                 <div class="hamburger-menu">

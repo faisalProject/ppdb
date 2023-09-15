@@ -13,7 +13,11 @@
     $conn = $db->connect();
 
     $result = $db->show($conn, "SELECT r.id, u.name , r.place_of_birth, r.date_of_birth, r.gender, r.status FROM registration r 
-    LEFT JOIN users u ON r.user_id = u.id");
+    LEFT JOIN users u ON r.user_id = u.id ORDER BY id DESC");
+
+    if ( isset($_POST['submit-keyword']) ) {
+        $result = $db->searchingByAdmin($conn, $_POST);
+    }
 
     // header
     require '../layouts/header-admin.php';
@@ -23,8 +27,8 @@
     <div class="selection-results-contents">
         <div class="container">
             <form action="" method="post">
-                <input type="text" class="form-control" placeholder="Masukkan nama...." autofocus>
-                <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                <input type="text" class="form-control" name="keyword" placeholder="Masukkan nama...." autofocus>
+                <button type="submit" name="submit-keyword" class="btn btn-primary"><i class="bi bi-search"></i></button>
             </form>
 
             <p>Data Seluruh Siswa</p>
